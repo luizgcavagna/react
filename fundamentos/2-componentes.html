@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componentes</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    const Button = ({ children, variant }) => {
+      return (
+        <button className={variant}>
+          {children}
+        </button>
+      )
+    }
+
+    const App = () => {
+      return (
+        <main className="flex gap-2 p-3">
+          <h1>Hello World!</h1>
+          <Button variant="px-3 py-2 bg-teal-300 hover:bg-teal-600 text-white cursor-pointer rounded-md">
+            Salvar
+          </Button>
+          <Button variant="px-3 py-2 bg-red-300 hover:bg-red-500 text-white cursor-pointer rounded-md">
+            Deletar
+          </Button>
+        </main>
+      )
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      <App />
+    )
+  </script>
+</body>
+
+</html>
