@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estados</title>
+  <title>Listas</title>
 </head>
 
 <body>
@@ -16,36 +16,24 @@
 
   <script type="text/babel">
 
-    const Counter = () => {
-
-      const [counter, setCounter] = React.useState(0);
+    const ListNames = () => {
+      const [names] = React.useState(["Louco", "Guga", "Giga", "Luz"]);
 
       return (
-        <>
-          <p>Contador: {counter}</p>
-          <button
-            onClick={() => setCounter(2)
-            }>
-            Atualizar
-          </button>
-          <button
-            onClick={() => setCounter((prevValue) => prevValue + 1)
-            }>
-            Incrementar
-          </button>
-          <button
-            onClick={() => setCounter((prevValue) => prevValue - 1)
-            }>
-            Decrementar
-          </button>
-        </>
+        <ul>
+          {
+            names.map((name, index) =>
+              <li key={`${index}-${name}`}>{name}</li>
+            )
+          }
+        </ul>
       )
     }
 
     const App = () => {
       return (
         <main>
-          <Counter />
+          <ListNames />
         </main>
       )
     }
