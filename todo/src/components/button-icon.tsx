@@ -41,7 +41,7 @@ export const buttonIconIconVariants = cva("transition", {
 })
 
 interface ButtonIconProps extends Omit<React.ComponentProps<"button">, "size" | "disabled">, VariantProps<typeof buttonIconVariants>  {
-  icon?: React.ComponentProps<typeof Icon>["svg"]
+  icon: React.ComponentProps<typeof Icon>["svg"]
 }
 
 export default function ButtonIcon({
@@ -60,6 +60,7 @@ export default function ButtonIcon({
         disabled,
         className
       })}
+      {...props}
     >
       <Icon svg={icon} className={buttonIconIconVariants({variant, size})} />
     </button>
